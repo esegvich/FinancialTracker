@@ -12,13 +12,14 @@ import {
     Dimensions,
     ActionSheetIOS
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Constants from 'expo-constants';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as Print from 'expo-print';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const apiKey = Constants.expoConfig?.extra?.OPENAI_API_KEY;
+const apiKey = "" // ADD API KEY HERE
 const { height } = Dimensions.get('window');
 
 interface Message {
@@ -142,42 +143,38 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
 
     return (
         <View style={styles.container}>
-            <KeyboardAvoidingView
-                style={{ flex: 1 }}
-                behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-            >
-                <View style={styles.header}>
-                    <Text style={styles.headerTitle}>Budget Bot</Text>
-                    <View style={styles.headerButtons}>
-                        <TouchableOpacity onPress={() => {}} style={styles.exportButton}>
-                            <MaterialIcons name="file-download" size={24} color="white" />
+            <View style={styles.header}>
+                <Text style={styles.headerTitle}>Budget Bot</Text>
+                <View style={styles.headerButtons}>
+                    <TouchableOpacity onPress={() => {}} style={styles.exportButton}>
+                        <MaterialIcons name="file-download" size={24} color="white" />
+                    </TouchableOpacity>
+                    {onClose && (
+                        <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+                            <Text style={styles.closeButtonText}>×</Text>
                         </TouchableOpacity>
-                        {onClose && (
-                            <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-                                <Text style={styles.closeButtonText}>×</Text>
-                            </TouchableOpacity>
-                        )}
-                    </View>
+                    )}
                 </View>
+            </View>
+
+            <KeyboardAwareScrollView
+                extraScrollHeight={90}
+                enableOnAndroid
+                keyboardShouldPersistTaps="handled"
+                contentContainerStyle={{ flexGrow: 1 }}
+                style={{ flex: 1 }}
+            >
 
                 <View style={styles.whiteSheet}>
-                    <ScrollView
-                        ref={scrollViewRef}
-                        style={styles.messagesContainer}
-                        contentContainerStyle={styles.messagesContentContainer}
-                        onContentSizeChange={() =>
-                            scrollViewRef.current?.scrollToEnd({ animated: true })
-                        }
-                    >
-                        <View ref={viewRef}>
-                            {messages.map(renderMessage)}
-                            {isLoading && (
-                                <View style={[styles.messageContainer, styles.botMessage]}>
-                                    <Text style={styles.loadingText}>Typing...</Text>
-                                </View>
-                            )}
-                        </View>
-                    </ScrollView>
+
+                    <View style={styles.messagesContainer}>
+                        {messages.map(renderMessage)}
+                        {isLoading && (
+                            <View style={[styles.messageContainer, styles.botMessage]}>
+                                <Text style={styles.loadingText}>Typing...</Text>
+                            </View>
+                        )}
+                    </View>
 
                     <View style={styles.inputContainerWrapper}>
                         <View style={styles.inputContainer}>
@@ -188,23 +185,33 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
                                 placeholder="Ask me about budgeting..."
                                 multiline
                             />
+
                             <TouchableOpacity
-                                style={[styles.sendButton, inputText.trim() !== '' && styles.sendButtonActive]}
+                                style={[
+                                    styles.sendButton,
+                                    inputText.trim() !== '' && styles.sendButtonActive
+                                ]}
                                 onPress={sendMessage}
                                 disabled={!inputText.trim()}
                             >
                                 <Text
-                                    style={[styles.sendButtonText, inputText.trim() !== '' && styles.sendButtonTextActive]}
+                                    style={[
+                                        styles.sendButtonText,
+                                        inputText.trim() !== '' && styles.sendButtonTextActive
+                                    ]}
                                 >
                                     Send
                                 </Text>
                             </TouchableOpacity>
+
                         </View>
                     </View>
+
                 </View>
-            </KeyboardAvoidingView>
+            </KeyboardAwareScrollView>
         </View>
     );
+
 };
 
 const styles = StyleSheet.create({
@@ -244,11 +251,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     whiteSheet: {
-        position: 'absolute',
-        top: height * 0.3,
-        bottom: 0,
-        left: 0,
-        right: 0,
+        flex: 1,
+        marginTop: height * 0.30,
         backgroundColor: '#F1FFF3',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,

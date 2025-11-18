@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326a800d-bc59-4517-a725-8c93cac96d50" name="Changes" comment="Added comments for better code readability." />
+    <list default="true" id="326a800d-bc59-4517-a725-8c93cac96d50" name="Changes" comment="Added comments for better code readability.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/app/(tabs)/Signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/app/(tabs)/Signin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/app/pages/Analysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/app/pages/Analysis.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/components/Chatbot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/components/Chatbot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/components/ParallaxScrollView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/components/ParallaxScrollView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financial-tracker/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/financial-tracker/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock 2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,14 +43,14 @@
     &quot;assignee&quot;: &quot;esegvich&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/WYENVY/FinancialTracker.git&quot;,
-    &quot;accountId&quot;: &quot;e7177ad5-0c2b-4939-8561-c8b62ca53fb5&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/esegvich/FinancialTracker.git",
+    "accountId": "e7177ad5-0c2b-4939-8561-c8b62ca53fb5"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -65,6 +77,7 @@
     &quot;Jest.displays total account balance.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ethan/WebstormProjects/FinancialTracker-Ethan&quot;,
@@ -75,7 +88,7 @@
     &quot;nodejs.jest.jest_package&quot;: &quot;/Users/ethan/WebstormProjects/FinancialTracker-Ethan/financial-tracker/node_modules/jest&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/ethan/WebstormProjects/FinancialTracker-Ethan/financial-tracker/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/ethan/WebstormProjects/FinancialTrackerApp/financial-tracker/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -93,6 +106,9 @@
       <recent name="$PROJECT_DIR$/financial-tracker/components" />
       <recent name="$PROJECT_DIR$/financial-tracker" />
       <recent name="$PROJECT_DIR$/financial-tracker/hooks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.HomeScreen - Account Balance Calculation.should calculate correct total balance from mixed transactions">
@@ -172,7 +188,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
       </set>
     </attachedChunks>
   </component>
@@ -211,6 +227,8 @@
       <workItem from="1747783944740" duration="159000" />
       <workItem from="1747913131069" duration="2238000" />
       <workItem from="1748295053839" duration="16191000" />
+      <workItem from="1763395624890" duration="13398000" />
+      <workItem from="1763484078046" duration="1304000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed the file system">
       <option name="closed" value="true" />

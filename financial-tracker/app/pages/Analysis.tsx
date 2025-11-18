@@ -121,7 +121,12 @@ const AnalysisScreen = () => {
 
         allExpenses.forEach(exp => {
             try {
-                const expenseDate = new Date(exp.date);
+                let expenseDate = new Date(exp.date);
+
+                if (isNaN(expenseDate.getTime()) || !/\d{4}/.test(exp.date)) {
+                    const year = new Date().getFullYear();
+                    expenseDate = new Date(`${exp.date}/${year}`);
+                }
 
                 if (isNaN(expenseDate.getTime())) {
                     console.warn('Invalid date for expense:', exp);
@@ -180,7 +185,12 @@ const AnalysisScreen = () => {
         };
 
         incomeEntries.forEach(inc => {
-            const incomeDate = new Date(inc.date);
+            let incomeDate = new Date(inc.date);
+            if (isNaN(incomeDate.getTime()) || !/\d{4}/.test(inc.date)) {
+                const year = new Date().getFullYear();
+                incomeDate = new Date(`${inc.date}/${year}`);
+            }
+
             if (isNaN(incomeDate.getTime())) return;
 
 
@@ -383,11 +393,15 @@ const AnalysisScreen = () => {
       </html>`;
     };
 
-    useEffect(() => {
-        if (webViewRef.current && !loading) {
-            webViewRef.current.reload();
-        }
-    }, [timePeriod, allExpenses, loading]);
+    <WebView
+        key={`${timePeriod}-${allExpenses.length}-${incomeEntries.length}`}
+        originWhitelist={['*']}
+        source={{ html: generateChartHTML() }}
+        style={styles.webview}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+    />
+
 
     if (loading) {
         return (
